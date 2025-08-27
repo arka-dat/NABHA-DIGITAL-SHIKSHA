@@ -141,7 +141,7 @@
             <div class="hero-content" style="position:relative;z-index:1;">
                 <h1>Bridging the Digital Divide in Nabha</h1>
                 <p>Empowering rural students with quality digital education, even with limited connectivity.</p>
-                <a href="#courses" class="cta-button" id="explore-courses-btn">Explore Courses</a>
+                <a href="explore-courses.html" class="cta-button" id="explore-courses-btn">Explore Courses</a>
             </div>
         </section>
 
@@ -325,15 +325,6 @@
         setTimeout(() => formMsg.textContent = '', 4000);
     });
 
-    // Focus on Explore Courses button scroll
-    document.getElementById('explore-courses-btn').addEventListener('click', function(e) {
-        const coursesSection = document.getElementById('courses');
-        if(coursesSection) {
-            e.preventDefault();
-            coursesSection.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-
     // Accessibility: close nav on link click (mobile)
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
@@ -403,4 +394,3 @@
     </script>
 </body>
 </html>
-
