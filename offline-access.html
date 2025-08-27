@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Access | Nabha Digital Shiksha</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(120deg, #f3f4f6 0%, #e0e7ff 100%);
+            color: #22223b;
+            margin: 0;
+        }
+        h1, h2, h3, .logo {
+            font-family: 'Poppins', Arial, sans-serif;
+            letter-spacing: 1px;
+        }
+        h1 {
+            color: #4338ca;
+            font-size: 2.3rem;
+            font-weight: 700;
+            margin-bottom: 0.3em;
+        }
+        h2 {
+            color: #3730a3;
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #3730a3;
+        }
+        nav ul.nav-links li a {
+            font-family: 'Poppins', Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .offline-section {
+            max-width: 1100px;
+            margin: 2.5rem auto 2rem auto;
+            background: rgba(255,255,255,0.97);
+            border-radius: 16px;
+            box-shadow: 0 4px 32px rgba(67,56,202,0.07);
+            padding: 2.5rem 2rem 2rem 2rem;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px);}
+            to { opacity: 1; transform: none;}
+        }
+        .resource-list {
+            margin: 1.5rem 0;
+            padding: 0;
+            list-style: none;
+        }
+        .resource-list li {
+            background: #f3f4f6;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.03);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.3s;
+        }
+        .resource-list li:hover {
+            background: #e0e7ff;
+        }
+        .resource-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .resource-info i {
+            color: #6366f1;
+            font-size: 1.5rem;
+        }
+        .download-btn, .watch-btn {
+            background: #6366f1;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 1.2rem;
+            font-family: 'Poppins', Arial, sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .download-btn:hover, .watch-btn:hover {
+            background: #4338ca;
+        }
+        .recordings-list {
+            margin: 1.5rem 0;
+            padding: 0;
+            list-style: none;
+        }
+        .recordings-list li {
+            background: #f3f4f6;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.03);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.3s;
+        }
+        .recordings-list li:hover {
+            background: #e0e7ff;
+        }
+        .recording-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .recording-info i {
+            color: #f59e42;
+            font-size: 1.5rem;
+        }
+        @media (max-width: 700px) {
+            .offline-section {
+                padding: 1.2rem 0.5rem;
+            }
+            .resource-list li, .recordings-list li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.7rem;
+                padding: 1rem 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Nabha Digital Shiksha 📚</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="teacher-support.html">Teacher Support</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="burger" aria-label="Open navigation" tabindex="0">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="offline-section">
+            <h1>Offline Access</h1>
+            <p>
+                Download class notes, resources, and watch class recordings anytime—even without internet!
+            </p>
+
+            <h2>PDF Notes & Resources</h2>
+            <ul class="resource-list">
+                <li>
+                    <div class="resource-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Class 6 Mathematics Notes</span>
+                    </div>
+                    <a class="download-btn" href="index_page_lab ECE,pdf.pdf" download>Download PDF</a>
+                </li>
+                <li>
+                    <div class="resource-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Class 7 Science Notes</span>
+                    </div>
+                    <a class="download-btn" href="resources/class7-science.pdf" download>Download PDF</a>
+                </li>
+                <li>
+                    <div class="resource-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Class 8 Social Science Notes</span>
+                    </div>
+                    <a class="download-btn" href="resources/class8-social.pdf" download>Download PDF</a>
+                </li>
+                <li>
+                    <div class="resource-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Class 9 English Resources</span>
+                    </div>
+                    <a class="download-btn" href="resources/class9-english.pdf" download>Download PDF</a>
+                </li>
+                <li>
+                    <div class="resource-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Class 10 Computer Science Notes</span>
+                    </div>
+                    <a class="download-btn" href="resources/class10-computer.pdf" download>Download PDF</a>
+                </li>
+                <li>
+                    <div class="resource-info">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>General Digital Literacy Guide</span>
+                    </div>
+                    <a class="download-btn" href="resources/digital-literacy.pdf" download>Download PDF</a>
+                </li>
+            </ul>
+
+            <h2>Class Recordings</h2>
+            <ul class="recordings-list">
+                <li>
+                    <div class="recording-info">
+                        <i class="fas fa-video"></i>
+                        <span>Class 6 Mathematics - Algebra Basics</span>
+                    </div>
+                    <a class="watch-btn" href="recordings/class6-math-algebra.mp4" download>Download Video</a>
+                </li>
+                <li>
+                    <div class="recording-info">
+                        <i class="fas fa-video"></i>
+                        <span>Class 7 Science - Life Processes</span>
+                    </div>
+                    <a class="watch-btn" href="recordings/class7-science-life.mp4" download>Download Video</a>
+                </li>
+                <li>
+                    <div class="recording-info">
+                        <i class="fas fa-video"></i>
+                        <span>Class 8 Social Science - Indian Constitution</span>
+                    </div>
+                    <a class="watch-btn" href="recordings/class8-social-constitution.mp4" download>Download Video</a>
+                </li>
+                <li>
+                    <div class="recording-info">
+                        <i class="fas fa-video"></i>
+                        <span>Class 9 English - Poetry Session</span>
+                    </div>
+                    <a class="watch-btn" href="recordings/class9-english-poetry.mp4" download>Download Video</a>
+                </li>
+                <li>
+                    <div class="recording-info">
+                        <i class="fas fa-video"></i>
+                        <span>Class 10 Computer Science - Python Basics</span>
+                    </div>
+                    <a class="watch-btn" href="recordings/class10-computer-python.mp4" download>Download Video</a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nabha Digital Shiksha. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+    <script>
+    // Burger menu toggle
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        burger.classList.toggle('toggle');
+    });
+    burger.addEventListener('keypress', (e) => {
+        if(e.key === "Enter" || e.key === " ") burger.click();
+    });
+    // Accessibility: close nav on link click (mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if(window.innerWidth < 700) {
+                navLinks.classList.remove('active');
+                burger.classList.remove('toggle');
+            }
+        });
+    });
+    </script>
+</body>
+</html>

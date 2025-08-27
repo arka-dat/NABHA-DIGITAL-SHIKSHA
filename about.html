@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Nabha Digital Shiksha</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Nabha Digital Shiksha 📚</div>
+            <ul class="nav-links">
+                <li><a href="index.html#hero">Home</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="burger" aria-label="Open navigation" tabindex="0">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero About Section -->
+        <section id="about-hero" style="background: linear-gradient(120deg, #a5b4fc 0%, #f1f5f9 100%); padding: 3rem 1rem 2rem 1rem; text-align: center; position: relative; overflow: hidden;">
+            <div style="max-width:700px;margin:0 auto;position:relative;z-index:1;">
+                <h1 style="font-size:2.4rem;margin-bottom:1rem;animation:fadeInUp 1s both;">About Us <span style="font-size:2rem;">👩‍🎓👨‍🎓</span></h1>
+                <p style="font-size:1.2rem;animation:fadeInUp 1.2s both;">
+                    <strong>Motto:</strong> <em>“Empowering Every Child, Everywhere.”</em><br><br>
+                    <strong>Our Motive:</strong> Nabha Digital Shiksha is dedicated to bridging the digital divide in rural Punjab. Our mission is to ensure that every student, regardless of their background or access to technology, receives quality digital education. We believe in equal opportunities and strive to make learning accessible, engaging, and relevant for all.
+                </p>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section id="team" style="background: #f1f5f9; padding: 3rem 1rem 2rem 1rem;">
+            <h2 style="text-align:center;margin-bottom:2rem;animation:fadeIn 1s both;">Meet Our Team <span style="font-size:1.5rem;">🤝</span></h2>
+            <div class="features-container" style="justify-content: center;gap:2rem;flex-wrap:wrap;">
+                <div class="feature-card team-card" style="animation:fadeInUp 1.1s both;">
+                    <span style="font-size:2.2rem;display:block;margin-bottom:0.5rem;">👨‍💼</span>
+                    <h3>Jaspreet Singh</h3>
+                    <p>Founder & Visionary<br><small>EdTech enthusiast, passionate about rural empowerment and digital literacy.</small></p>
+                </div>
+                <div class="feature-card team-card" style="animation:fadeInUp 1.2s both;">
+                    <span style="font-size:2.2rem;display:block;margin-bottom:0.5rem;">👩‍🏫</span>
+                    <h3>Simran Kaur</h3>
+                    <p>Lead Educator<br><small>Expert in curriculum design and interactive teaching methods.</small></p>
+                </div>
+                <div class="feature-card team-card" style="animation:fadeInUp 1.3s both;">
+                    <span style="font-size:2.2rem;display:block;margin-bottom:0.5rem;">💻</span>
+                    <h3>Rahul Sharma</h3>
+                    <p>Technical Lead<br><small>Responsible for platform development and offline-first technology.</small></p>
+                </div>
+                <div class="feature-card team-card" style="animation:fadeInUp 1.4s both;">
+                    <span style="font-size:2.2rem;display:block;margin-bottom:0.5rem;">🤗</span>
+                    <h3>Community Volunteers</h3>
+                    <p>Our dedicated volunteers help us reach every corner of Nabha and beyond.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nabha Digital Shiksha. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+    <script>
+    // Burger menu toggle
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        burger.classList.toggle('toggle');
+    });
+    burger.addEventListener('keypress', (e) => {
+        if(e.key === "Enter" || e.key === " ") burger.click();
+    });
+    // Accessibility: close nav on link click (mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if(window.innerWidth < 700) {
+                navLinks.classList.remove('active');
+                burger.classList.remove('toggle');
+            }
+        });
+    });
+    </script>
+</body>
+</html>

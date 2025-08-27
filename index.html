@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabha Digital Shiksha</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Nabha Digital Shiksha 📚</div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger" aria-label="Open navigation" tabindex="0">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <!-- Animated SVG background -->
+            <svg width="100%" height="100%" style="position:absolute;top:0;left:0;z-index:0;pointer-events:none;" viewBox="0 0 1440 320">
+                <path fill="#a5b4fc" fill-opacity="0.4">
+                    <animate attributeName="d" dur="8s" repeatCount="indefinite"
+                        values="
+                        M0,160L80,170C160,180,320,200,480,197C640,194,800,168,960,154C1120,140,1280,138,1360,137L1440,136L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z;
+                        M0,180L80,160C160,140,320,120,480,130C640,140,800,180,960,200C1120,220,1280,210,1360,205L1440,200L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z;
+                        M0,160L80,170C160,180,320,200,480,197C640,194,800,168,960,154C1120,140,1280,138,1360,137L1440,136L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z
+                        " />
+                </path>
+            </svg>
+            <div class="hero-content" style="position:relative;z-index:1;">
+                <h1>Bridging the Digital Divide in Nabha</h1>
+                <p>Empowering rural students with quality digital education, even with limited connectivity.</p>
+                <a href="#courses" class="cta-button" id="explore-courses-btn">Explore Courses</a>
+            </div>
+        </section>
+
+        <section id="features">
+            <h2>Why Choose Us?</h2>
+            <div class="features-container">
+                <div class="feature-card" onclick="window.location.href='offline-access.html'" style="cursor:pointer;">
+                    <i class="fas fa-wifi-slash"></i>
+                    <h3>Offline Access</h3>
+                    <p>Our learning modules can be downloaded and used without a constant internet connection.</p>
+                    <div class="counter" data-target="1200">0</div>
+                    <small>+ Students Reached</small>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-language"></i>
+                    <h3>Local Language Content</h3>
+                    <p>Courses are available in Punjabi and Hindi to ensure better understanding for all students.</p>
+                    <div class="counter" data-target="8">0</div>
+                    <small>Languages & Subjects</small>
+                </div>
+                <div class="feature-card" onclick="window.location.href='teacher-support.html'" style="cursor:pointer;">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <h3>Teacher Support</h3>
+                    <p>We provide training and resources for teachers to effectively use our digital tools.</p>
+                    <div class="counter" data-target="50">0</div>
+                    <small>+ Teachers Trained</small>
+                </div>
+            </div>
+        </section>
+
+        <section id="courses">
+            <h2>Our Courses</h2>
+            <div class="courses-container">
+                <div class="course-card">
+                    <img src="https://images.unsplash.com/photo-1554415707-6e8cf6b9bfdf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTAwOTZ8MHwxfHNlYXJjaHw0fHxjb21wdXRlciUyMGxpdGVyYWN5fGVufDB8fHx8MTY5OTI4NjA4N3ww&ixlib=rb-4.0.3&q=80&w=1080" alt="Digital Literacy">
+                    <h3>Basic Digital Literacy</h3>
+                    <p>Learn the fundamentals of using computers, the internet, and essential software safely.</p>
+                    <a href="courses.html#digital-literacy" class="cta-button" style="margin-top:1rem;">Learn More</a>
+                </div>
+                <div class="course-card">
+                     <img src="https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTAwOTZ8MHwxfHNlYXJjaHwyfHxtYXRoZW1hdGljc3xlbnwwfHx8fDE2OTkyODYxMTN8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Mathematics">
+                    <h3>Interactive Mathematics</h3>
+                    <p>Engaging lessons and quizzes to make learning math fun and effective for all classes.</p>
+                    <a href="courses.html#mathematics" class="cta-button" style="margin-top:1rem;">Learn More</a>
+                </div>
+                <div class="course-card">
+                     <img src="https://images.unsplash.com/photo-1576319155264-99536e0be1ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzOTAwOTZ8MHwxfHNlYXJjaHwzfHxzY2llbmNlJTIwZXhwZXJpbWVudHxlbnwwfHx8fDE2OTkyODYxNDB8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Science">
+                    <h3>Science & Technology</h3>
+                    <p>Explore scientific concepts through interactive simulations and video lessons.</p>
+                    <a href="courses.html#science" class="cta-button" style="margin-top:1rem;">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>Our Mission</h2>
+            <p>Our mission is to provide every student in Nabha and its surrounding rural areas with equal access to modern educational resources. We aim to foster digital literacy and create a strong foundation for their future academic and professional success, ensuring no child is left behind due to a lack of infrastructure.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <form id="contact-form" autocomplete="off">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+            <p id="form-message"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nabha Digital Shiksha. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Burger menu toggle
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        burger.classList.toggle('toggle');
+    });
+    burger.addEventListener('keypress', (e) => {
+        if(e.key === "Enter" || e.key === " ") burger.click();
+    });
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('main section[id]');
+    const navItems = document.querySelectorAll('.nav-links a[href^="#"]');
+    window.addEventListener('scroll', () => {
+        let current = "";
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 80;
+            if(pageYOffset >= sectionTop) current = section.getAttribute('id');
+        });
+        navItems.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === '#' + current) link.classList.add('active');
+        });
+    });
+
+    // Animated counters in features
+    function animateCounter(counter) {
+        const target = +counter.getAttribute('data-target');
+        const speed = 30;
+        let count = 0;
+        function update() {
+            if(count < target) {
+                count += Math.ceil(target / speed);
+                if(count > target) count = target;
+                counter.textContent = count;
+                requestAnimationFrame(update);
+            } else {
+                counter.textContent = target;
+            }
+        }
+        update();
+    }
+    document.querySelectorAll('.counter').forEach(counter => {
+        let started = false;
+        function onScroll() {
+            const rect = counter.getBoundingClientRect();
+            if(!started && rect.top < window.innerHeight && rect.bottom > 0) {
+                started = true;
+                animateCounter(counter);
+                window.removeEventListener('scroll', onScroll);
+            }
+        }
+        window.addEventListener('scroll', onScroll);
+        onScroll();
+    });
+
+    // Contact form feedback
+    const form = document.getElementById('contact-form');
+    const formMsg = document.getElementById('form-message');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        formMsg.textContent = "Thank you! We'll get back to you soon.";
+        form.reset();
+        setTimeout(() => formMsg.textContent = '', 4000);
+    });
+
+    // Focus on Explore Courses button scroll
+    document.getElementById('explore-courses-btn').addEventListener('click', function(e) {
+        const coursesSection = document.getElementById('courses');
+        if(coursesSection) {
+            e.preventDefault();
+            coursesSection.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+
+    // Accessibility: close nav on link click (mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if(window.innerWidth < 700) {
+                navLinks.classList.remove('active');
+                burger.classList.remove('toggle');
+            }
+        });
+    });
+
+    // Smooth scroll for hash on load
+    if(window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if(target) setTimeout(() => target.scrollIntoView({behavior:'smooth'}), 300);
+    }
+    </script>
+</body>
+</html>

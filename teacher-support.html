@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Support | Nabha Digital Shiksha</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(120deg, #f3f4f6 0%, #e0e7ff 100%);
+            color: #22223b;
+            margin: 0;
+        }
+        h1, h2, h3, .logo {
+            font-family: 'Poppins', Arial, sans-serif;
+            letter-spacing: 1px;
+        }
+        h1 {
+            color: #4338ca;
+            font-size: 2.3rem;
+            font-weight: 700;
+            margin-bottom: 0.3em;
+        }
+        h2, details summary {
+            color: #3730a3;
+            font-weight: 600;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #3730a3;
+        }
+        nav ul.nav-links li a {
+            font-family: 'Poppins', Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .teacher-support-section {
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+            max-width: 1100px;
+            margin: 2.5rem auto 2rem auto;
+            background: rgba(255,255,255,0.95);
+            border-radius: 16px;
+            box-shadow: 0 4px 32px rgba(67,56,202,0.07);
+            padding: 2.5rem 2rem 2rem 2rem;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        .teacher-table-container {
+            overflow-x: auto;
+            margin-bottom: 2rem;
+            animation: fadeIn 1.2s 0.5s both;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .teacher-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            background: #fff;
+            box-shadow: 0 2px 16px rgba(67,56,202,0.04);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+            font-size: 1.05rem;
+        }
+        .teacher-table th, .teacher-table td {
+            border: 1px solid #d1d5db;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            transition: background 0.3s;
+        }
+        .teacher-table th {
+            background: #6366f1;
+            color: #fff;
+            font-family: 'Poppins', Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 1.08rem;
+        }
+        .teacher-table tr {
+            transition: background 0.3s;
+        }
+        .teacher-table tr:hover {
+            background: #e0e7ff;
+            transition: background 0.3s;
+        }
+        .teacher-table tr:nth-child(even) {
+            background: #f9fafb;
+        }
+        .search-bar {
+            margin: 1.5rem 0 1rem 0;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s 0.6s forwards;
+        }
+        .search-bar input, .search-bar select {
+            padding: 0.6rem 1rem;
+            border: 1px solid #a5b4fc;
+            border-radius: 6px;
+            min-width: 180px;
+            font-size: 1rem;
+            font-family: 'Roboto', Arial, sans-serif;
+            transition: box-shadow 0.3s, border-color 0.3s;
+            background: #f3f4f6;
+        }
+        .search-bar input:focus, .search-bar select:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 2px #a5b4fc;
+            background: #fff;
+        }
+        details {
+            margin-top: 1.5rem;
+            border-radius: 6px;
+            background: #f3f4f6;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.03);
+            transition: background 0.3s;
+            overflow: hidden;
+            font-size: 1.08rem;
+        }
+        details[open] {
+            background: #e0e7ff;
+            transition: background 0.3s;
+            animation: fadeIn 0.6s;
+        }
+        details[open] ul {
+            animation: fadeInUp 0.5s;
+        }
+        details[open] summary::after {
+            content: "▲";
+            float: right;
+            transition: transform 0.3s;
+        }
+        details summary::after {
+            content: "▼";
+            float: right;
+            transition: transform 0.3s;
+        }
+        details summary {
+            cursor: pointer;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            user-select: none;
+            transition: background 0.3s;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+        details[open] summary {
+            background: #c7d2fe;
+        }
+        details ul {
+            margin: 0 0 1rem 2rem;
+            padding: 0.5rem 0 0 0;
+        }
+        footer {
+            font-family: 'Roboto', Arial, sans-serif;
+            font-size: 1rem;
+            background: #3730a3;
+            color: #fff;
+            padding: 1.2rem 0 0.7rem 0;
+            margin-top: 2rem;
+            border-radius: 0 0 12px 12px;
+        }
+        .social-links a {
+            color: #a5b4fc;
+            margin: 0 0.5rem;
+            font-size: 1.3rem;
+            transition: color 0.2s;
+        }
+        .social-links a:hover {
+            color: #fff;
+        }
+        @media (max-width: 700px) {
+            .teacher-support-section {
+                padding: 1.2rem 0.5rem;
+            }
+            .teacher-table th, .teacher-table td {
+                padding: 0.5rem 0.5rem;
+            }
+            .search-bar input, .search-bar select {
+                min-width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Nabha Digital Shiksha 📚</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="burger" aria-label="Open navigation" tabindex="0">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="teacher-support-section">
+            <h1>Teacher Support</h1>
+            <p>
+                Meet our dedicated teaching staff and find resources to help you succeed in your digital classroom.
+            </p>
+            <div class="search-bar">
+                <input type="text" id="searchName" placeholder="Search by name..." oninput="filterTable()">
+                <input type="text" id="searchSubject" placeholder="Search by subject..." oninput="filterTable()">
+                <input type="text" id="searchClass" placeholder="Search by class..." oninput="filterTable()">
+            </div>
+            <div class="teacher-table-container">
+                <table class="teacher-table" id="teacherTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Subjects</th>
+                            <th>Classes</th>
+                            <th>Contact</th>
+                            <th>Experience</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mrs. Simran Kaur</td>
+                            <td>Mathematics</td>
+                            <td>6th - 8th</td>
+                            <td>simran.kaur@email.com</td>
+                            <td>8 years</td>
+                        </tr>
+                        <tr>
+                            <td>Mr. Rajesh Sharma</td>
+                            <td>Science, Computer</td>
+                            <td>9th - 10th</td>
+                            <td>rajesh.sharma@email.com</td>
+                            <td>10 years</td>
+                        </tr>
+                        <tr>
+                            <td>Ms. Amandeep Kaur</td>
+                            <td>Punjabi, Hindi</td>
+                            <td>6th - 10th</td>
+                            <td>amandeep.kaur@email.com</td>
+                            <td>6 years</td>
+                        </tr>
+                        <tr>
+                            <td>Mr. Gurpreet Singh</td>
+                            <td>English</td>
+                            <td>8th - 10th</td>
+                            <td>gurpreet.singh@email.com</td>
+                            <td>7 years</td>
+                        </tr>
+                        <tr>
+                            <td>Mrs. Neha Verma</td>
+                            <td>Social Science</td>
+                            <td>6th - 8th</td>
+                            <td>neha.verma@email.com</td>
+                            <td>5 years</td>
+                        </tr>
+                        <tr>
+                            <td>Mr. Harpreet Singh</td>
+                            <td>Physical Education</td>
+                            <td>6th - 10th</td>
+                            <td>harpreet.singh@email.com</td>
+                            <td>9 years</td>
+                        </tr>
+                        <tr>
+                            <td>Ms. Priya Mehra</td>
+                            <td>Art & Craft</td>
+                            <td>6th - 8th</td>
+                            <td>priya.mehra@email.com</td>
+                            <td>4 years</td>
+                        </tr>
+                        <tr>
+                            <td>Mr. Sandeep Kumar</td>
+                            <td>Mathematics, Science</td>
+                            <td>9th - 10th</td>
+                            <td>sandeep.kumar@email.com</td>
+                            <td>11 years</td>
+                        </tr>
+                        <tr>
+                            <td>Mrs. Ritu Bala</td>
+                            <td>English, Social Science</td>
+                            <td>6th - 8th</td>
+                            <td>ritu.bala@email.com</td>
+                            <td>8 years</td>
+                        </tr>
+                        <tr>
+                            <td>Ms. Manpreet Kaur</td>
+                            <td>Hindi</td>
+                            <td>6th - 10th</td>
+                            <td>manpreet.kaur@email.com</td>
+                            <td>5 years</td>
+                        </tr>
+                        <tr>
+                            <td>Mr. Deepak Joshi</td>
+                            <td>Computer Science</td>
+                            <td>9th - 10th</td>
+                            <td>deepak.joshi@email.com</td>
+                            <td>7 years</td>
+                        </tr>
+                        <tr>
+                            <td>Mrs. Sunita Sharma</td>
+                            <td>Mathematics</td>
+                            <td>6th - 7th</td>
+                            <td>sunita.sharma@email.com</td>
+                            <td>6 years</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <details>
+                <summary>Teacher Resources & Training</summary>
+                <ul>
+                    <li>Download <a href="#">Digital Teaching Guide (PDF)</a></li>
+                    <li>Access <a href="#">Recorded Training Sessions</a></li>
+                    <li>Join our <a href="#">Teacher Community Forum</a></li>
+                    <li>Contact support: <a href="mailto:support@nabha-digital-shiksha.org">support@nabha-digital-shiksha.org</a></li>
+                </ul>
+            </details>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nabha Digital Shiksha. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+    <script>
+    // Burger menu toggle
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        burger.classList.toggle('toggle');
+    });
+    burger.addEventListener('keypress', (e) => {
+        if(e.key === "Enter" || e.key === " ") burger.click();
+    });
+    // Accessibility: close nav on link click (mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if(window.innerWidth < 700) {
+                navLinks.classList.remove('active');
+                burger.classList.remove('toggle');
+            }
+        });
+    });
+
+    // Interactive table filter
+    function filterTable() {
+        const name = document.getElementById('searchName').value.toLowerCase();
+        const subject = document.getElementById('searchSubject').value.toLowerCase();
+        const classVal = document.getElementById('searchClass').value.toLowerCase();
+        const table = document.getElementById('teacherTable');
+        const trs = table.getElementsByTagName('tr');
+        for (let i = 1; i < trs.length; i++) {
+            const tds = trs[i].getElementsByTagName('td');
+            if (!tds.length) continue;
+            const [tdName, tdSubject, tdClass] = [tds[0], tds[1], tds[2]];
+            const matchName = tdName.textContent.toLowerCase().includes(name);
+            const matchSubject = tdSubject.textContent.toLowerCase().includes(subject);
+            const matchClass = tdClass.textContent.toLowerCase().includes(classVal);
+            trs[i].style.display = (matchName && matchSubject && matchClass) ? '' : 'none';
+        }
+    }
+
+    // Animate table rows on load
+    window.addEventListener('DOMContentLoaded', () => {
+        const rows = document.querySelectorAll('.teacher-table tbody tr');
+        rows.forEach((row, i) => {
+            row.style.opacity = 0;
+            row.style.transform = 'translateY(30px)';
+            setTimeout(() => {
+                row.style.transition = 'opacity 0.5s, transform 0.5s';
+                row.style.opacity = 1;
+                row.style.transform = 'none';
+            }, 200 + i * 80);
+        });
+    });
+    </script>
+</body>
+</html>
