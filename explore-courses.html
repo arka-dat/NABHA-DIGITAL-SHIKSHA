@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Courses | Nabha Digital Shiksha</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(120deg, #f3f4f6 0%, #e0e7ff 100%);
+            color: #22223b;
+            margin: 0;
+        }
+        h1, h2, h3, .logo {
+            font-family: 'Poppins', Arial, sans-serif;
+            letter-spacing: 1px;
+        }
+        h1 {
+            color: #4338ca;
+            font-size: 2.3rem;
+            font-weight: 700;
+            margin-bottom: 0.3em;
+        }
+        h2 {
+            color: #3730a3;
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #3730a3;
+        }
+        nav ul.nav-links li a {
+            font-family: 'Poppins', Arial, sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        .courses-section {
+            max-width: 1100px;
+            margin: 2.5rem auto 2rem auto;
+            background: rgba(255,255,255,0.97);
+            border-radius: 16px;
+            box-shadow: 0 4px 32px rgba(67,56,202,0.07);
+            padding: 2.5rem 2rem 2rem 2rem;
+            animation: fadeInUp 1s ease-out 0.2s forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px);}
+            to { opacity: 1; transform: none;}
+        }
+        .course-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .course-card {
+            background: #f3f4f6;
+            border-radius: 12px;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.03);
+            flex: 1 1 300px;
+            min-width: 270px;
+            max-width: 340px;
+            padding: 1.5rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: background 0.3s, box-shadow 0.3s;
+        }
+        .course-card:hover {
+            background: #e0e7ff;
+            box-shadow: 0 4px 16px rgba(67,56,202,0.10);
+        }
+        .course-card i {
+            font-size: 2.2rem;
+            color: #6366f1;
+            margin-bottom: 0.7rem;
+        }
+        .course-card h3 {
+            margin: 0.2rem 0 0.7rem 0;
+            color: #4338ca;
+            font-size: 1.3rem;
+        }
+        .course-card ul {
+            margin: 0.5rem 0 0 1.2rem;
+            padding: 0;
+        }
+        .course-card li {
+            margin-bottom: 0.4rem;
+            font-size: 1rem;
+        }
+        .course-card .course-btn {
+            margin-top: 1.2rem;
+            background: #6366f1;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 0.5rem 1.2rem;
+            font-family: 'Poppins', Arial, sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .course-card .course-btn:hover {
+            background: #4338ca;
+        }
+        @media (max-width: 900px) {
+            .course-list {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Nabha Digital Shiksha 📚</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="explore-courses.html">Courses</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="teacher-support.html">Teacher Support</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="burger" aria-label="Open navigation" tabindex="0">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="courses-section">
+            <h1>Explore Our Courses</h1>
+            <p>
+                Nabha Digital Shiksha offers a range of foundational courses designed for rural students. All courses are available in Punjabi, Hindi, and English, and can be accessed offline.
+            </p>
+            <div class="course-list">
+                <div class="course-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Basic Digital Literacy</h3>
+                    <ul>
+                        <li>Introduction to computers and devices</li>
+                        <li>Internet safety and responsible use</li>
+                        <li>Using email and basic office tools</li>
+                        <li>Accessing online resources</li>
+                    </ul>
+                    <a href="courses.html#digital-literacy" class="course-btn">Learn More</a>
+                </div>
+                <div class="course-card">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Mathematics</h3>
+                    <ul>
+                        <li>Concepts from Class 6 to 10</li>
+                        <li>Interactive quizzes and practice</li>
+                        <li>Video lessons and solved examples</li>
+                        <li>Downloadable notes and worksheets</li>
+                    </ul>
+                    <a href="courses.html#mathematics" class="course-btn">Learn More</a>
+                </div>
+                <div class="course-card">
+                    <i class="fas fa-flask"></i>
+                    <h3>Science & Technology</h3>
+                    <ul>
+                        <li>Physics, Chemistry, Biology basics</li>
+                        <li>Experiments and simulations</li>
+                        <li>Environmental science</li>
+                        <li>Science in daily life</li>
+                    </ul>
+                    <a href="courses.html#science" class="course-btn">Learn More</a>
+                </div>
+                <div class="course-card">
+                    <i class="fas fa-language"></i>
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>Punjabi, Hindi, and English</li>
+                        <li>Grammar and comprehension</li>
+                        <li>Reading and writing practice</li>
+                        <li>Audio and video resources</li>
+                    </ul>
+                    <a href="courses.html#languages" class="course-btn">Learn More</a>
+                </div>
+                <div class="course-card">
+                    <i class="fas fa-globe-asia"></i>
+                    <h3>Social Science</h3>
+                    <ul>
+                        <li>History, Geography, Civics</li>
+                        <li>Indian Constitution basics</li>
+                        <li>Culture and society</li>
+                        <li>Current affairs for students</li>
+                    </ul>
+                    <a href="courses.html#social-science" class="course-btn">Learn More</a>
+                </div>
+                <div class="course-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Life Skills</h3>
+                    <ul>
+                        <li>Communication and teamwork</li>
+                        <li>Time management</li>
+                        <li>Problem-solving activities</li>
+                        <li>Health and hygiene</li>
+                    </ul>
+                    <a href="courses.html#life-skills" class="course-btn">Learn More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Nabha Digital Shiksha. All Rights Reserved.</p>
+        <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+    <script>
+    // Burger menu toggle
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    burger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        burger.classList.toggle('toggle');
+    });
+    burger.addEventListener('keypress', (e) => {
+        if(e.key === "Enter" || e.key === " ") burger.click();
+    });
+    // Accessibility: close nav on link click (mobile)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if(window.innerWidth < 700) {
+                navLinks.classList.remove('active');
+                burger.classList.remove('toggle');
+            }
+        });
+    });
+    </script>
+</body>
