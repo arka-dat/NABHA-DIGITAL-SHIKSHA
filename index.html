@@ -6,8 +6,107 @@
     <title>Nabha Digital Shiksha</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Loader styles */
+        #loader-bg {
+            position: fixed;
+            z-index: 99999;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100vw; height: 100vh;
+            background: linear-gradient(120deg, #a5b4fc 0%, #6366f1 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: opacity 0.7s cubic-bezier(.4,2,.6,1), visibility 0.7s;
+        }
+        #loader-bg.hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .loader-logo {
+            font-family: 'Poppins', Arial, sans-serif;
+            font-size: 2.2rem;
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            animation: fadeInDown 1.2s;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-40px);}
+            to { opacity: 1; transform: none;}
+        }
+        .loader-animation {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.2rem;
+        }
+        .loader-animation span {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin: 0 4px;
+            background: #fff;
+            border-radius: 50%;
+            animation: bounce 1.2s infinite;
+        }
+        .loader-animation span:nth-child(2) { animation-delay: 0.2s;}
+        .loader-animation span:nth-child(3) { animation-delay: 0.4s;}
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0.8);}
+            40% { transform: scale(1.2);}
+        }
+        .loader-text {
+            color: #e0e7ff;
+            font-size: 1.1rem;
+            font-family: 'Roboto', Arial, sans-serif;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            animation: fadeInUp 1.2s;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px);}
+            to { opacity: 1; transform: none;}
+        }
+        .loader-quote {
+            color: #fff;
+            font-size: 1rem;
+            font-family: 'Poppins', Arial, sans-serif;
+            margin-top: 1.2rem;
+            opacity: 0.8;
+            text-align: center;
+            max-width: 320px;
+            animation: fadeInUp 1.6s;
+        }
+        @media (max-width: 600px) {
+            .loader-logo { font-size: 1.3rem; }
+            .loader-quote { font-size: 0.95rem; }
+        }
+    </style>
 </head>
 <body>
+    <!-- Loader -->
+    <div id="loader-bg">
+        <div class="loader-logo">
+            <i class="fas fa-graduation-cap"></i> Nabha Digital Shiksha
+        </div>
+        <div class="loader-animation">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="loader-text">Preparing your learning experience...</div>
+        <div class="loader-quote">
+            "Education is the most powerful weapon which you can use to change the world." <br>— Nelson Mandela
+        </div>
+    </div>
+
     <header>
         <nav>
             <div class="logo">Nabha Digital Shiksha 📚</div>
@@ -123,7 +222,31 @@
         </div>
     </footer>
 
+    <!-- AI Chatbot Widget -->
+    <div id="chatbot-widget" style="position:fixed;bottom:30px;right:30px;z-index:9999;">
+        <button id="chatbot-toggle" aria-label="Open chatbot" style="background:#6366f1;color:#fff;border:none;border-radius:50%;width:60px;height:60px;box-shadow:0 2px 8px rgba(67,56,202,0.18);font-size:2rem;cursor:pointer;transition:background 0.2s;">
+            <i class="fas fa-robot"></i>
+        </button>
+        <div id="chatbot-window" style="display:none;flex-direction:column;position:absolute;bottom:70px;right:0;width:340px;max-width:90vw;height:420px;background:#fff;border-radius:16px;box-shadow:0 8px 32px rgba(67,56,202,0.18);overflow:hidden;">
+            <div style="background:#6366f1;color:#fff;padding:1rem;font-family:'Poppins',Arial,sans-serif;font-weight:600;display:flex;justify-content:space-between;align-items:center;">
+                <span>AI Assistant</span>
+                <button id="chatbot-close" aria-label="Close chatbot" style="background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer;">&times;</button>
+            </div>
+            <div id="chatbot-messages" style="flex:1;overflow-y:auto;padding:1rem;background:#f3f4f6;font-size:1rem;"></div>
+            <form id="chatbot-form" style="display:flex;padding:0.7rem;background:#f9fafb;border-top:1px solid #e0e7ff;">
+                <input id="chatbot-input" type="text" placeholder="Ask me anything..." autocomplete="off" style="flex:1;padding:0.5rem 1rem;border:1px solid #a5b4fc;border-radius:6px;font-size:1rem;font-family:'Roboto',Arial,sans-serif;">
+                <button type="submit" style="margin-left:0.5rem;background:#6366f1;color:#fff;border:none;border-radius:6px;padding:0.5rem 1rem;font-family:'Poppins',Arial,sans-serif;font-weight:600;cursor:pointer;">Send</button>
+            </form>
+        </div>
+    </div>
     <script>
+    // Loader hide logic
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            document.getElementById('loader-bg').classList.add('hide');
+        }, 5000); // Loader visible for at least 5s for animation
+    });
+
     // Smooth scroll for nav links
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
@@ -226,6 +349,57 @@
         const target = document.querySelector(window.location.hash);
         if(target) setTimeout(() => target.scrollIntoView({behavior:'smooth'}), 300);
     }
+
+    // AI Chatbot logic (demo, not connected to real AI backend)
+    const chatbotToggle = document.getElementById('chatbot-toggle');
+    const chatbotWindow = document.getElementById('chatbot-window');
+    const chatbotClose = document.getElementById('chatbot-close');
+    const chatbotForm = document.getElementById('chatbot-form');
+    const chatbotInput = document.getElementById('chatbot-input');
+    const chatbotMessages = document.getElementById('chatbot-messages');
+
+    chatbotToggle.addEventListener('click', () => {
+        chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+        if(chatbotWindow.style.display === 'flex') chatbotInput.focus();
+    });
+    chatbotClose.addEventListener('click', () => {
+        chatbotWindow.style.display = 'none';
+    });
+
+    function appendMessage(sender, text) {
+        const msg = document.createElement('div');
+        msg.style.margin = '0.5rem 0';
+        msg.style.display = 'flex';
+        msg.style.alignItems = 'flex-start';
+        msg.innerHTML = sender === 'user'
+            ? `<div style="background:#6366f1;color:#fff;padding:0.5rem 1rem;border-radius:12px 12px 0 12px;max-width:80%;margin-left:auto;">${text}</div>`
+            : `<div style="background:#fff;color:#22223b;padding:0.5rem 1rem;border-radius:12px 12px 12px 0;max-width:80%;box-shadow:0 1px 4px #e0e7ff;">${text}</div>`;
+        chatbotMessages.appendChild(msg);
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    }
+
+    chatbotForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const userMsg = chatbotInput.value.trim();
+        if(!userMsg) return;
+        appendMessage('user', userMsg);
+        chatbotInput.value = '';
+        setTimeout(() => {
+            // Demo responses (replace with real AI integration)
+            let response = "Sorry, I'm a demo assistant. Please contact support for detailed help.";
+            if(/offline|pdf|download/i.test(userMsg)) response = "You can download class notes and resources from the Offline Access page.";
+            else if(/teacher|support/i.test(userMsg)) response = "Visit the Teacher Support page for teacher details and resources.";
+            else if(/course|class|subject/i.test(userMsg)) response = "Check out our Courses section for all available subjects and materials.";
+            else if(/contact|help/i.test(userMsg)) response = "You can reach us via the Contact section at the bottom of this page.";
+            else if(/hello|hi|hey/i.test(userMsg)) response = "Hello! How can I assist you today?";
+            appendMessage('bot', response);
+        }, 700);
+    });
+
+    // Keyboard accessibility for chatbot
+    chatbotInput.addEventListener('keydown', function(e) {
+        if(e.key === "Escape") chatbotWindow.style.display = 'none';
+    });
     </script>
 </body>
 </html>
