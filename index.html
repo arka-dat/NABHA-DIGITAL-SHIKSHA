@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Learning Platform - Nabha Rural Students</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h2 class="lang-hi">🎓 नभा डिजिटल शिक्षा</h2>
+                    <h2 class="lang-en" style="display:none;">🎓 Nabha Digital Learning</h2>
+                    <p class="lang-hi">नभा डिजिटल शिक्षा</p>
+                    <p class="lang-en" style="display:none;">Nabha Digital Learning</p>
+                </div>
+                <nav class="nav">
+                    <button class="nav-item active" data-section="home">Home</button>
+                    <button class="nav-item" data-section="courses">Courses</button>
+                    <button class="nav-item" data-section="motivation">Motivation</button>
+                    <button class="nav-item" data-section="attendance">Attendance</button>
+                    <button class="nav-item" data-section="about">About</button>
+                </nav>
+                <button class="mobile-menu-toggle">☰</button>
+                <button id="langSwitchBtn" class="btn btn--lang-switch" style="margin-left:16px;">
+                    <span id="langIcon">🌐</span>
+                    <span id="langText">English</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="lang-hi">स्वागत है!</h1>
+                        <h1 class="lang-en" style="display:none;">Welcome!</h1>
+                        <p class="hero-subtitle lang-hi">नभा के ग्रामीण विद्यार्थियों के लिए डिजिटल शिक्षा मंच</p>
+                        <p class="hero-subtitle lang-en" style="display:none;">Digital Learning Platform for Rural Students in Nabha</p>
+                        <button class="btn btn--primary hero-cta lang-hi">शुरू करें</button>
+                        <button class="btn btn--primary hero-cta lang-en" style="display:none;">Start Learning</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <!-- Platform Stats -->
+                <div class="stats-section">
+                    <h2 class="lang-hi">हमारी उपलब्धियां</h2>
+                    <h2 class="lang-en" style="display:none;">Our Achievements</h2>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">2,500+</div>
+                            <div class="stat-label lang-hi">विद्यार्थी</div>
+                            <div class="stat-label lang-en" style="display:none;">Students</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label lang-hi">कोर्सेज</div>
+                            <div class="stat-label lang-en" style="display:none;">Courses</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">85%</div>
+                            <div class="stat-label lang-hi">सफलता दर</div>
+                            <div class="stat-label lang-en" style="display:none;">Success Rate</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label lang-hi">गांव</div>
+                            <div class="stat-label lang-en" style="display:none;">Villages</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Quote -->
+                <div class="daily-quote-section">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3 class="lang-hi">आज का प्रेरणादायक विचार</h3>
+                            <h3 class="lang-en" style="display:none;">Quote of the Day</h3>
+                            <blockquote id="dailyQuote" class="quote">
+                                <p class="quote-text lang-hi"></p>
+                                <p class="quote-text lang-en" style="display:none;"></p>
+                                <cite class="quote-author"></cite>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Courses -->
+                <div class="featured-courses">
+                    <h2 class="lang-hi">प्रमुख कोर्सेज</h2>
+                    <h2 class="lang-en" style="display:none;">Featured Courses</h2>
+                    <div class="courses-grid" id="featuredCoursesGrid"></div>
+                </div>
+
+                <!-- Announcements -->
+                <div class="announcements">
+                    <h2 class="lang-hi">घोषणाएं</h2>
+                    <h2 class="lang-en" style="display:none;">Announcements</h2>
+                    <div class="announcement-list">
+                        <div class="announcement-item">
+                            <div class="announcement-date">04 Sep 2025</div>
+                            <div class="announcement-text lang-hi">नए गणित कोर्स का शुभारंभ</div>
+                            <div class="announcement-text lang-en" style="display:none;">New Mathematics Course Launch</div>
+                        </div>
+                        <div class="announcement-item">
+                            <div class="announcement-date">02 Sep 2025</div>
+                            <div class="announcement-text lang-hi">प्रेरणादायक व्याख्यान श्रृंखला</div>
+                            <div class="announcement-text lang-en" style="display:none;">Motivational Lecture Series</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="section">
+            <div class="container">
+                <h1 class="lang-hi">उपलब्ध कोर्सेज</h1>
+                <h1 class="lang-en" style="display:none;">Available Courses</h1>
+                <div class="courses-grid" id="coursesGrid"></div>
+            </div>
+        </section>
+
+        <!-- Motivation Section -->
+        <section id="motivation" class="section">
+            <div class="container">
+                <h1 class="lang-hi">प्रेरणा</h1>
+                <h1 class="lang-en" style="display:none;">Motivation</h1>
+
+                <!-- Daily Inspiration -->
+                <div class="inspiration-section">
+                    <div class="card">
+                        <div class="card__body">
+                            <h2 class="lang-hi">आज की प्रेरणा</h2>
+                            <h2 class="lang-en" style="display:none;">Today's Inspiration</h2>
+                            <div id="motivationalQuote"></div>
+                            <button class="btn btn--secondary lang-hi" id="newQuoteBtn">नया उद्धरण</button>
+                            <button class="btn btn--secondary lang-en" id="newQuoteBtn" style="display:none;">New Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Lectures -->
+                <div class="video-lectures">
+                    <h2 class="lang-hi">प्रेरणादायक व्याख्यान</h2>
+                    <h2 class="lang-en" style="display:none;">Motivational Lectures</h2>
+                    <div class="video-grid" id="videoGrid"></div>
+                </div>
+
+                <!-- Success Stories -->
+                <div class="success-stories">
+                    <h2 class="lang-hi">सफलता की कहानियां</h2>
+                    <h2 class="lang-en" style="display:none;">Success Stories</h2>
+                    <div class="stories-grid" id="storiesGrid"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Attendance Section -->
+        <section id="attendance" class="section">
+            <div class="container">
+                <h1 class="lang-hi">उपस्थिति</h1>
+                <h1 class="lang-en" style="display:none;">Attendance</h1>
+
+                <!-- Student Login -->
+                <div class="attendance-login">
+                    <div class="card">
+                        <div class="card__body">
+                            <h2 class="lang-hi">विद्यार्थी लॉगिन</h2>
+                            <h2 class="lang-en" style="display:none;">Student Login</h2>
+                            <form id="attendanceForm">
+                                <div class="form-group">
+                                    <label class="form-label lang-hi">नाम</label>
+                                    <label class="form-label lang-en" style="display:none;">Name</label>
+                                    <input type="text" class="form-control" id="studentName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label lang-hi">कक्षा</label>
+                                    <label class="form-label lang-en" style="display:none;">Class</label>
+                                    <select class="form-control" id="studentClass" required>
+                                        <option value="" class="lang-hi">कक्षा चुनें</option>
+                                        <option value="" class="lang-en" style="display:none;">Select Class</option>
+                                        <option value="6" class="lang-hi">कक्षा 6</option>
+                                        <option value="6" class="lang-en" style="display:none;">Class 6</option>
+                                        <option value="7" class="lang-hi">कक्षा 7</option>
+                                        <option value="7" class="lang-en" style="display:none;">Class 7</option>
+                                        <option value="8" class="lang-hi">कक्षा 8</option>
+                                        <option value="8" class="lang-en" style="display:none;">Class 8</option>
+                                        <option value="9" class="lang-hi">कक्षा 9</option>
+                                        <option value="9" class="lang-en" style="display:none;">Class 9</option>
+                                        <option value="10" class="lang-hi">कक्षा 10</option>
+                                        <option value="10" class="lang-en" style="display:none;">Class 10</option>
+                                        <option value="11" class="lang-hi">कक्षा 11</option>
+                                        <option value="11" class="lang-en" style="display:none;">Class 11</option>
+                                        <option value="12" class="lang-hi">कक्षा 12</option>
+                                        <option value="12" class="lang-en" style="display:none;">Class 12</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label lang-hi">विषय</label>
+                                    <label class="form-label lang-en" style="display:none;">Subject</label>
+                                    <select class="form-control" id="subjectSelect" required>
+                                        <option value="" class="lang-hi">विषय चुनें</option>
+                                        <option value="" class="lang-en" style="display:none;">Select Subject</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn--primary btn--full-width lang-hi">उपस्थिति दर्ज करें</button>
+                                <button type="submit" class="btn btn--primary btn--full-width lang-en" style="display:none;">Mark Attendance</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attendance Summary -->
+                <div class="attendance-summary" id="attendanceSummary" style="display: none;">
+                    <div class="card">
+                        <div class="card__body">
+                            <h2 class="lang-hi">आज की उपस्थिति</h2>
+                            <h2 class="lang-en" style="display:none;">Today's Attendance</h2>
+                            <div class="attendance-info">
+                                <div class="attendance-detail">
+                                    <span class="label lang-hi">विद्यार्थी:</span>
+                                    <span class="label lang-en" style="display:none;">Student:</span>
+                                    <span id="attendeeInfo"></span>
+                                </div>
+                                <div class="attendance-detail">
+                                    <span class="label lang-hi">समय:</span>
+                                    <span class="label lang-en" style="display:none;">Time:</span>
+                                    <span id="attendanceTime"></span>
+                                </div>
+                                <div class="status status--success lang-hi">उपस्थित</div>
+                                <div class="status status--success lang-en" style="display:none;">Present</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attendance Statistics -->
+                <div class="attendance-stats">
+                    <h2 class="lang-hi">उपस्थिति आंकड़े</h2>
+                    <h2 class="lang-en" style="display:none;">Attendance Statistics</h2>
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-number" id="totalDays">0</div>
+                            <div class="stat-label lang-hi">कुल दिन</div>
+                            <div class="stat-label lang-en" style="display:none;">Total Days</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="presentDays">0</div>
+                            <div class="stat-label lang-hi">उपस्थित दिन</div>
+                            <div class="stat-label lang-en" style="display:none;">Present Days</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="attendancePercentage">0%</div>
+                            <div class="stat-label lang-hi">प्रतिशत</div>
+                            <div class="stat-label lang-en" style="display:none;">Percentage</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h1 class="lang-hi">हमारे बारे में</h1>
+                <h1 class="lang-en" style="display:none;">About Us</h1>
+
+                <div class="about-content">
+                    <div class="card">
+                        <div class="card__body">
+                            <h2 class="lang-hi">हमारा मिशन</h2>
+                            <h2 class="lang-en" style="display:none;">Our Mission</h2>
+                            <p class="lang-hi">नभा और आसपास के ग्रामीण क्षेत्रों के विद्यार्थियों को गुणवत्तापूर्ण शिक्षा प्रदान करना और डिजिटल माध्यमों से शिक्षा के अवसरों में वृद्धि करना।</p>
+                            <p class="lang-en" style="display:none;">To provide quality education to students in rural areas of Nabha and surrounding regions, enhancing educational opportunities through digital means.</p>
+                        </div>
+                    </div>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">📚</div>
+                            <h3 class="lang-hi">व्यापक पाठ्यक्रम</h3>
+                            <h3 class="lang-en" style="display:none;">Comprehensive Curriculum</h3>
+                            <p class="lang-hi">सभी विषयों के लिए विस्तृत पाठ्यक्रम</p>
+                            <p class="lang-en" style="display:none;">Detailed curriculum for all subjects</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">💡</div>
+                            <h3 class="lang-hi">प्रेरणादायक सामग्री</h3>
+                            <h3 class="lang-en" style="display:none;">Motivational Content</h3>
+                            <p class="lang-hi">विद्यार्थियों के लिए प्रेरणादायक वीडियो और कहानियां</p>
+                            <p class="lang-en" style="display:none;">Motivational videos and stories for students</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h3 class="lang-hi">प्रगति ट्रैकिंग</h3>
+                            <h3 class="lang-en" style="display:none;">Progress Tracking</h3>
+                            <p class="lang-hi">शिक्षा में प्रगति की निगरानी</p>
+                            <p class="lang-en" style="display:none;">Monitor progress in learning</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🤝</div>
+                            <h3 class="lang-hi">समुदायिक सहयोग</h3>
+                            <h3 class="lang-en" style="display:none;">Community Support</h3>
+                            <p class="lang-hi">समुदाय के साथ सहयोग</p>
+                            <p class="lang-en" style="display:none;">Collaboration with the community</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info">
+                        <div class="card">
+                            <div class="card__body">
+                                <h2 class="lang-hi">संपर्क करें</h2>
+                                <h2 class="lang-en" style="display:none;">Contact Us</h2>
+                                <div class="contact-details">
+                                    <div class="contact-item">
+                                        <span class="contact-icon">📍</span>
+                                        <div>
+                                            <strong class="lang-hi">पता:</strong>
+                                            <strong class="lang-en" style="display:none;">Address:</strong><br>
+                                            <span class="lang-hi">नभा डिजिटल शिक्षा केंद्र, नभा, पंजाब</span>
+                                            <span class="lang-en" style="display:none;">Nabha Digital Learning Center, Nabha, Punjab</span>
+                                        </div>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact-icon">📞</span>
+                                        <div>
+                                            <strong class="lang-hi">फोन:</strong>
+                                            <strong class="lang-en" style="display:none;">Phone:</strong><br>
+                                            +91-1765-XXXXXX
+                                        </div>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact-icon">✉️</span>
+                                        <div>
+                                            <strong class="lang-hi">ईमेल:</strong>
+                                            <strong class="lang-en" style="display:none;">Email:</strong><br>
+                                            abangal2005@gmail.com
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="lang-hi">नभा डिजिटल शिक्षा</h3>
+                    <h3 class="lang-en" style="display:none;">Nabha Digital Learning</h3>
+                    <p class="lang-hi">डिजिटल शिक्षा के माध्यम से ग्रामीण विद्यार्थियों को सशक्त बनाना</p>
+                    <p class="lang-en" style="display:none;">Empowering rural students through digital learning</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="lang-hi">त्वरित लिंक</h4>
+                    <h4 class="lang-en" style="display:none;">Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#motivation">Motivation</a></li>
+                        <li><a href="#attendance">Attendance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="lang-hi">सहायता</h4>
+                    <h4 class="lang-en" style="display:none;">Support</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="mailto:abangal2005@gmail.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="lang-hi">&copy; 2025 नभा डिजिटल शिक्षा मंच. सर्वाधिकार सुरक्षित।</p>
+                <p class="lang-en" style="display:none;">&copy; 2025 Nabha Digital Learning Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+    document.getElementById('langSwitchBtn').addEventListener('click', function() {
+        const isHindi = document.querySelector('.lang-hi').style.display !== 'none';
+        document.querySelectorAll('.lang-hi').forEach(el => el.style.display = isHindi ? 'none' : '');
+        document.querySelectorAll('.lang-en').forEach(el => el.style.display = isHindi ? '' : 'none');
+        document.getElementById('langText').textContent = isHindi ? 'हिन्दी' : 'English';
+        document.getElementById('langIcon').textContent = isHindi ? '🇮🇳' : '🇬🇧';
+    });
+    </script>
+</body>
+</html>
