@@ -1462,3 +1462,56 @@ body.dark-mode select {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.auth-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+}
+.auth-btn {
+    background: transparent;
+    border: none;
+    color: #1976d2;
+    font-weight: bold;
+    margin: 0 2px;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 4px 4px 0 0;
+    transition: background 0.2s;
+}
+.auth-btn.active, .auth-btn:hover {
+    background: #e3f0ff;
+}
+.auth-dropdown {
+    display: none;
+    position: absolute;
+    top: 36px;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(25, 118, 210, 0.12);
+    border-radius: 0 0 8px 8px;
+    padding: 16px;
+    min-width: 220px;
+    z-index: 100;
+}
+.auth-input {
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 6px 8px;
+    border: 1px solid #b6e0fe;
+    border-radius: 4px;
+}
+.btn--small {
+    padding: 4px 12px;
+    font-size: 0.95em;
+}
+#loginStatus {
+    margin-top: 8px;
+    min-height: 20px;
+}
+@media (max-width: 768px) {
+    .auth-section { margin-left: 8px; }
+    .auth-dropdown { left: 0; right: auto; }
+}
+
