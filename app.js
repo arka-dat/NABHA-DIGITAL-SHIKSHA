@@ -90,7 +90,8 @@ const appData = {
         title: "सपनों को हकीकत बनाओ (Make Your Dreams Reality)",
         description: "Learn how to turn your biggest dreams into achievable goals",
         duration: "15 minutes",
-        speaker: "Dr. Motivational Singh"
+        speaker: "Dr. Motivational Singh",
+        src: "https://youtu.be/AfDfoQE2iyM?si=C85Jhinv4XjuUPf1"
       },
       {
         title: "गांव से ग्लोबल - आपका सफर (From Village to Global - Your Journey)",
@@ -594,7 +595,6 @@ document.getElementById('studentSignUpForm').addEventListener('submit', async fu
 document.getElementById('studentLoginForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const name = document.getElementById('loginName').value;
-    const studentClass = document.getElementById('loginClass').value;
     const password = document.getElementById('loginPassword').value;
     const statusDiv = document.getElementById('loginStatus');
     statusDiv.innerHTML = '<span class="loading"></span>';
@@ -602,11 +602,12 @@ document.getElementById('studentLoginForm').addEventListener('submit', async fun
         const response = await fetch('http://localhost:3001/api/student-login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, class: studentClass, password })
+            body: JSON.stringify({ name, password })
         });
         const result = await response.json();
         if (result.success) {
             statusDiv.innerHTML = '<span class="status status--success">Login successful!</span>';
+            showAuthDropdown(false);
         } else {
             statusDiv.innerHTML = `<span class="status status--error">${result.message || 'Login failed.'}</span>`;
         }
@@ -615,4 +616,44 @@ document.getElementById('studentLoginForm').addEventListener('submit', async fun
     }
 });
 
-console.log('App.js loaded successfully');
+// Utility to show/hide auth dropdown
+function showAuthDropdown(show = true) {
+    const dropdown = document.querySelector('.auth-dropdown');
+    if (dropdown) dropdown.style.display = show ? 'block' : 'none';
+}
+
+// Tab switching for Login/Sign Up
+document.getElementById('showLogin').addEventListener('click', function() {
+    document.getElementById('showLogin').classList.add('active');
+    document.getElementById('showSignUp').classList.remove('active');
+    document.getElementById('studentLoginForm').style.display = 'block';
+    document.getElementById('studentSignUpForm').style.display = 'none';
+    showAuthDropdown(true);
+});
+document.getElementById('showSignUp').addEventListener('click', function() {
+    document.getElementById('showSignUp').classList.add('active');
+    document.getElementById('showLogin').classList.remove('active');
+    document.getElementById('studentLoginForm').style.display = 'none';
+    document.getElementById('studentSignUpForm').style.display = 'block';
+    showAuthDropdown(true);
+});
+
+// Close dropdown when close button is clicked
+document.getElementById('closeAuthDropdown').addEventListener('click', function() {
+    showAuthDropdown(false);
+});
+
+// Optionally close dropdown when clicking outside
+document.addEventListener('mousedown', function(e) {
+    const dropdown = document.querySelector('.auth-dropdown');
+    const authSection = document.getElementById('authSection');
+    if (dropdown && !authSection.contains(e.target)) {
+        showAuthDropdown(false);
+    }
+});
+
+// Close dropdown after successful login/sign up
+document.getElementById('studentLoginForm').addEventListener('submit', function(e) {
+    // On successful sign up:
+    showAuthDropdown(false);
+});
